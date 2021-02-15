@@ -95,7 +95,7 @@ def main() -> None:
         sys.exit('Error: BTC exchange rate format has changed')
 
     gbp_to_eur_rate = get_gbp_to_eur_rate()
-    if not gbp_to_eur_rate:
+    if gbp_to_eur_rate is None:
         sys.exit('Error: ECB exchange rate format has changed')
 
     btc_price_in_gbp = convert_btc_price(btc_price_in_eur, gbp_to_eur_rate)
