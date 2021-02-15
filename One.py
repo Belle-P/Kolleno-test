@@ -78,7 +78,7 @@ def main() -> None:
     validate_response_type(response)
 
     soup = BeautifulSoup(response.content, 'html.parser')
-    title = soup.title.string if soup.title else None
+    title = get_page_title(soup)
     stylesheet_count = get_stylesheet_count(soup)
     image_urls = get_image_urls(soup, response.url)
 
